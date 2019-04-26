@@ -16,7 +16,7 @@ body
 
 body a
 {
-    text-decoration: underline;
+    text-decoration: none;
     color: #0D1529;
 }
 
@@ -375,7 +375,7 @@ ul.slides li img
 
 #post-2
 {
-    background-image: url("images/connectwork.png");
+    background-image: url("images/dark_wall.png");
 }
 
 #post-3
@@ -383,14 +383,19 @@ ul.slides li img
     background-image: url("images/prism.png");
 }
 
+#post-4
+{
+    background-image: url("images/dark_wall.png");
+}
+
 #post-5
 {
-    background-image: url("images/connectwork.png");
+    background-image: url("images/prism.png");
 }
 
 #post-6
 {
-    background-image: url("images/prism.png");
+    background-image: url("images/dark_wall.png");
 }
 
 .blog-top-content-holder
@@ -530,6 +535,10 @@ ul.slides li img
 {
     font-size: 36px;
     line-height: 50px;
+}
+
+body .entry-content .content-wrap a {
+    text-decoration: underline;
 }
 
 .blog-item-holder .video-popup
