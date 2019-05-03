@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vr_video_test.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\vrteam6\\Documents\\VR_Video_Test\\actions.json",
+      "action_manifest_path": "C:\\Users\\vrteam6\\Documents\\vrcapstone19sp-team6\\unity-test\\actions.json",
       "strings": {
         "en_us": {
           "name": "VR_Video_Test [Testing]"
