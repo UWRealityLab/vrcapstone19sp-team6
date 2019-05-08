@@ -10,6 +10,9 @@ public class SceneStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Valve.VR.OpenVR.System.ResetSeatedZeroPose();
+        Valve.VR.OpenVR.Compositor.SetTrackingSpace(
+        Valve.VR.ETrackingUniverseOrigin.TrackingUniverseSeated);
         SceneManager.LoadScene(firstScene);
     }
 

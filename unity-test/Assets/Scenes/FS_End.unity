@@ -440,6 +440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: VRV_Start
+  showInDebugOnly: 0
+  normalMaterial: {fileID: 2100000, guid: b86061fc63f54ae44b18c550dd5a0146, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: 8e2d8ae8095ceaa4482845bdcb5a2c29, type: 2}
 --- !u!114 &1975810562
 MonoBehaviour:
   m_ObjectHideFlags: 0

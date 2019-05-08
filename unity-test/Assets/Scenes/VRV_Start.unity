@@ -112,6 +112,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &102565561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1188852324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &102565562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102565561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab24e53d84a73d47872fb40dd38cdf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugEnabled: 1
 --- !u!1001 &1188852324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +140,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -192,9 +215,9 @@ MonoBehaviour:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
   active: 1
-  color: {r: 1, g: 1, b: 1, a: 0}
+  color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0.627451}
   thickness: 0.002
-  clickColor: {r: 1, g: 0.84486943, b: 0.24056602, a: 1}
+  clickColor: {r: 1, g: 1, b: 1, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
   addRigidBody: 0
@@ -315,4 +338,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed50814056dc1174b9504a2285ccf687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: FS_Eviction_Apartment
+  firstScene: FS_Park_Intro

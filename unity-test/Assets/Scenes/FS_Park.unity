@@ -203,63 +203,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &604071902
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 188068, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_Name
-      value: CardboardBox_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.194
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.7695646
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.321
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.05726263
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9983592
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -6.5650005
-      objectReference: {fileID: 0}
-    - target: {fileID: 421174, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 36fb2481533bf494e9499dc228c7fd7d, type: 3}
 --- !u!1 &639751629
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 22.944, y: -129.126, z: -131.02}
 --- !u!1 &747087382
 GameObject:
@@ -339,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747087384}
   - component: {fileID: 747087383}
+  - component: {fileID: 747087385}
   m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -354,7 +298,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747087382}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 3daf80bbb9491e1418df34b5d3b2cb9a, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6e2cb543d20fec5478ed2f9885143841, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -392,8 +336,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &747087385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747087382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d4792aa58c3a4cbec6e560c9a374c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: FS_Park_Menu
+  triggerOnVideoEnd: 1
+  delayBeforeTransition: 2
 --- !u!1 &818017842
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef231c5e90121614798c260bb21cb87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: FS_Morning_Awake
+  targetScene: FS_Park_Intro
+  showInDebugOnly: 1
 --- !u!114 &818017844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +510,7 @@ Transform:
   m_Children:
   - {fileID: 1270100101}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 9.765, y: 42.820004, z: 1.085}
 --- !u!1 &911167733
 GameObject:
@@ -586,6 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: FS_Park_Menu
+  showInDebugOnly: 1
 --- !u!114 &911167735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +669,7 @@ Transform:
   m_Children:
   - {fileID: 351059864}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 9.765, y: 42.820004, z: 1.085}
 --- !u!1 &1253121678
 GameObject:
@@ -777,7 +738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 13.465001, y: 67.9, z: -26.160002}
 --- !u!1 &1270100100
 GameObject:

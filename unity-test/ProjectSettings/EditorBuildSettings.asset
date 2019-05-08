@@ -53,4 +53,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FS_Park_Menu.unity
     guid: 8c23a9b99e6a20645b81293b2e1f9fbb
+  - enabled: 1
+    path: Assets/Scenes/FS_End.unity
+    guid: e02c11e99afa8aa4aba4e59d50308a80
+  - enabled: 1
+    path: Assets/Scenes/FS_Park_Intro.unity
+    guid: d5c6a955a1350b24c9e1c3fe73f67990
   m_configObjects: {}
