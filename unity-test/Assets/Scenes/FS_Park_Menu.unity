@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1125954312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278080448}
   - component: {fileID: 1278080447}
+  - component: {fileID: 1278080449}
   m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -567,6 +568,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278080449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278080446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f1f70a47acc043b5b0781e4213d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360757598
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +596,7 @@ GameObject:
   - component: {fileID: 1360757599}
   m_Layer: 0
   m_Name: Line Up Outside a Shelter
-  m_TagString: Untagged
+  m_TagString: Choice Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -748,7 +761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1371533755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,7 +1009,7 @@ GameObject:
   - component: {fileID: 1951195294}
   m_Layer: 0
   m_Name: Pick Up Shift
-  m_TagString: Untagged
+  m_TagString: Choice Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
