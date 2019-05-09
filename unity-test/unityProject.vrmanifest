@@ -2,7 +2,7 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.vr_video_test.exe",
+      "app_key": "application.generated.unity.findingseattle.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "C:\\Users\\vrteam6\\Documents\\vrcapstone19sp-team6\\unity-test\\actions.json",

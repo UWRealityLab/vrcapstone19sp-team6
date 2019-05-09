@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,6 +9,11 @@ using Valve.VR.InteractionSystem;
 public class LaserPointerWrapper : MonoBehaviour
 {
     private SteamVR_LaserPointer pointer;
+    public bool attached;
+
+    [EnumFlags]
+    public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +22,7 @@ public class LaserPointerWrapper : MonoBehaviour
         pointer.PointerIn += OnPointerIn;
         pointer.PointerOut += OnPointerOut;
         pointer.PointerClick += OnPointerClick;
+        attached = false;
     }
 
     // Update is called once per frame
@@ -27,35 +34,39 @@ public class LaserPointerWrapper : MonoBehaviour
     private void OnPointerIn(object sender, PointerEventArgs e)
     {
         IPointerEnterHandler pointerEnterHandler = e.target.GetComponent<IPointerEnterHandler>();
-        if (pointerEnterHandler == null)
-        {
-            return;
-        }
+        //Debug.Log("entered onPointerIn");
 
-        pointerEnterHandler.OnPointerEnter(new PointerEventData(EventSystem.current));
-        //e.target.gameObject.SendMessage("OnHandHoverBegin", gameObject.GetComponent<Hand>());
+        //pointerEnterHandler.OnPointerEnter(new PointerEventData(EventSystem.current));
+        //e.target.gameObject.SendMessage("HandHoverUpdate", gameObject.GetComponent<Hand>());
     }
 
     private void OnPointerOut(object sender, PointerEventArgs e)
     {
+        //Debug.Log("entered onPointerOut");
         IPointerExitHandler pointerExitHandler = e.target.GetComponent<IPointerExitHandler>();
-        if (pointerExitHandler == null)
-        {
-            return;
-        }
-
-        pointerExitHandler.OnPointerExit(new PointerEventData(EventSystem.current));
+       
+        //pointerExitHandler.OnPointerExit(new PointerEventData(EventSystem.current));
         //e.target.gameObject.SendMessage("OnHandHoverEnd", gameObject.GetComponent<Hand>());
     }
 
     private void OnPointerClick(object sender, PointerEventArgs e)
     {
-        IPointerClickHandler pointerClickHandler = e.target.GetComponent<IPointerClickHandler>();
-        if (pointerClickHandler == null)
+        Debug.Log("entered onPointerClick");
+        if (attached)
         {
-            return;
+            Debug.LogWarning("DeAttaching " + e.target.gameObject);
+           
+            gameObject.GetComponent<Hand>().DetachObject(e.target.gameObject);
+            attached = false;
         }
+        else
+        {
+            Debug.LogWarning("Attaching " + e.target.gameObject);
+            gameObject.GetComponent<Hand>().AttachObject(e.target.gameObject, GrabTypes.Trigger, attachmentFlags);
+            attached = true;
+        }
+        //gameObject.GetComponent<Hand>().AttachObject(e.target.gameObject, GrabTypes.None, attachmentFlags);
+        //e.target.gameObject.SendMessage("HandHoverUpdate", gameObject.GetComponent<Hand>());
 
-        pointerClickHandler.OnPointerClick(new PointerEventData(EventSystem.current));
     }
 }

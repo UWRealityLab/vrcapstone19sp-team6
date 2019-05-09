@@ -146,6 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: FS_Morning_Sleeping
+  showInDebugOnly: 0
+  normalMaterial: {fileID: 0}
+  selectedMaterial: {fileID: 0}
 --- !u!114 &448641584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448641582}
   m_LocalRotation: {x: 0.08268406, y: 0.3629516, z: -0.022284513, w: 0.92786473}
-  m_LocalPosition: {x: 1.5160003, y: 0.541, z: 1.1679997}
+  m_LocalPosition: {x: 3.516, y: 0.541, z: 2.168}
   m_LocalScale: {x: 0.53522164, y: 0.2537205, z: 0.023198312}
   m_Children:
   - {fileID: 1704934420}
@@ -304,6 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: FS_Eviction_Door
+  showInDebugOnly: 0
+  normalMaterial: {fileID: 0}
+  selectedMaterial: {fileID: 0}
 --- !u!114 &504094798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504094796}
   m_LocalRotation: {x: 0.08268406, y: 0.3629516, z: -0.022284513, w: 0.92786473}
-  m_LocalPosition: {x: 1.0460595, y: 0.52893525, z: 1.5999705}
+  m_LocalPosition: {x: 3.046059, y: 0.52893525, z: 2.59997}
   m_LocalScale: {x: 0.5352215, y: 0.2537205, z: 0.023198308}
   m_Children:
   - {fileID: 1889516470}
@@ -453,7 +459,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352510231}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e94afbdd2937a224ab0bddb2afd3d64f, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 0410c5770bacc7a47904d72b2b8d2b80, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
