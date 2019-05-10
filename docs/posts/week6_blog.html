@@ -110,6 +110,12 @@
                             <p>&nbsp;</p>
                             <p>Our highest priority for next week is to find recordings that we can use as the voiceover for our scenes.  We are also going to refilm the eviction scenes to not have a moving camera, and the cell phone scene to fix the focus.</p>
                             <p>&nbsp;</p>
+                            <p>After filming the scenes, we spent a while linking everything in the project together. We had to add transitions between the VR Videos that wouldn’t ruin the immersion by jerking the user from one scene to the next, or dropping the user into a loading screen. Eventually, we decided to reuse a script provided from SteamVR that is meant to load a new scene, but with heavy modifications to prevent any menus from showing.</p>
+                            <p>&nbsp;</p>
+                            <p>Another challenge this week for our sub-team was getting menus to work correctly. We had to create rendered objects that could sit in front of various parts of a VR video and show a glow effect when the cursor hovers over them, to indicate that they are interactable. This was challenging as the alignment was heavily dependent on the user’s viewpoint, and SteamVR allows the user to move the position of their head in the Unity world. To get around this, we are planning to use rendered objects for the highlighted objects as well, so that the glowing effect can always be centered on the object it is selecting and the only possible misalignment will be between the object and the background (which is much harder to notice in most applications).</p>
+                            <p>&nbsp;</p>
+                            <p>Finally, with the new menu system in place, we created a set of utility scripts that would allow us to specify whether a scene should advance to the next one via a user selection, a time delay, or a video ending. The reason it was important for us to create these utility scripts is because the content of our application is still fluid and changing, but no matter what the final narrative looks like we will want this functionality, so it makes sense to abstract it out from the project relatively early.</p>
+                            <p>&nbsp;</p>
                     </div>
                     <div class="clear"></div>
                 </article>
