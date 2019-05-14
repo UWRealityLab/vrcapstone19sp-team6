@@ -352,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScene: FS_Park
   triggerOnVideoEnd: 0
-  delayBeforeTransition: 12
+  delayBeforeTransition: 8
 --- !u!1 &1884504091
 GameObject:
   m_ObjectHideFlags: 0
