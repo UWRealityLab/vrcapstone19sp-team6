@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using Valve.VR;
 
-public class Script : MonoBehaviour
+[RequireComponent(typeof(VideoPlayer)), RequireComponent(typeof(AudioSource))]
+public class FS_Script : MonoBehaviour
 {
     public enum Direction { IN, OUT };
 
@@ -25,6 +26,10 @@ public class Script : MonoBehaviour
     public class ScriptAnimateText { public float time; public Direction direction; public float duration; public AnimatedText text; }
     public List<ScriptAnimateText> scriptAnimateTextEvents;
 
+    [System.Serializable]
+    public class ScriptSceneTransition { public float time; public string nextScene; }
+    public List<ScriptSceneTransition> scriptSceneTransitionEvents;
+
     public Material VRVideoMaterial;
 
     private VideoPlayer VRVideo;
@@ -39,7 +44,7 @@ public class Script : MonoBehaviour
         t = 0;
         playing = true;
         
-        SteamVR_Fade.Start(Color.clear, 0f);
+        SteamVR_Fade.Start(Color.black, 0f);
         VRVideo.Stop();
     }
 
@@ -99,6 +104,16 @@ public class Script : MonoBehaviour
                 i--;
             }
         }
+
+        for (int i = 0; i < scriptSceneTransitionEvents.Count; i++)
+        {
+            if (t > scriptSceneTransitionEvents[i].time)
+            {
+                HandleScriptSceneTransition(scriptSceneTransitionEvents[i]);
+                scriptSceneTransitionEvents.RemoveAt(i);
+                i--;
+            }
+        }
     }
 
     private void HandleScriptAudio(ScriptAudio scriptAudio)
@@ -130,5 +145,11 @@ public class Script : MonoBehaviour
         {
             scriptAnimateText.text.Exit(scriptAnimateText.duration);
         }
+    }
+
+    private void HandleScriptSceneTransition(ScriptSceneTransition scriptSceneTransition)
+    {
+        //SceneManager.LoadScene(scriptSceneTransition.nextScene);
+        SteamVR_LoadLevel.Begin(scriptSceneTransition.nextScene);
     }
 }

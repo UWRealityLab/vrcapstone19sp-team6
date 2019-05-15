@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class GazeInteractable : MonoBehaviour
 {
@@ -8,6 +10,11 @@ public class GazeInteractable : MonoBehaviour
     public GameObject[] hideOnGaze;
     public GameObject[] showOnSelect;
     public GameObject[] hideOnSelect;
+
+    public enum Action { CHANGE_SCENE, NO_ACTION };
+    public Action onSelectAction;
+    public string onSelectNextScene;
+    public GazeMenu gazeMenu;
 
     protected virtual void Start()
     {
@@ -24,6 +31,11 @@ public class GazeInteractable : MonoBehaviour
         foreach (GameObject obj in hideOnSelect)
         {
             obj.SetActive(false);
+        }
+        if (onSelectAction == Action.CHANGE_SCENE)
+        {
+            StartSceneTransition();
+            gazeMenu.Deselect();
         }
     }
 
@@ -71,5 +83,10 @@ public class GazeInteractable : MonoBehaviour
     public virtual Quaternion GetRotation()
     {
         return transform.rotation * Quaternion.Euler(90, 0, 0);
+    }
+
+    private void StartSceneTransition()
+    {
+        SteamVR_LoadLevel.Begin(onSelectNextScene);
     }
 }

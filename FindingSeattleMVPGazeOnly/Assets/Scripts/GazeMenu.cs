@@ -9,7 +9,7 @@ public class GazeMenu : GazeInteractable
     public GameObject[] showOnMenuSelect;
 
     private readonly float CLOSED_SCALE = 0.08f;
-    private readonly float OPEN_SCALE = 0.6f;
+    private readonly float OPEN_SCALE = 0.55f;
     private bool isSelected;
 
     private Vector3[] menuItemPositions;
@@ -31,7 +31,6 @@ public class GazeMenu : GazeInteractable
         isSelected = true;
 
         StartCoroutine(ScaleMenu(CLOSED_SCALE, OPEN_SCALE, 0.8f));
-        Debug.Log("done with select cor1");
         for (int i = 0; i < showOnMenuSelect.Length; i++)
         {
             showOnMenuSelect[i].SetActive(true);
