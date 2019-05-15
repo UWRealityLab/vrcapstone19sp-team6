@@ -276,13 +276,31 @@ MonoBehaviour:
   scriptAudioEvents: []
   scriptVideoEvents:
   - time: 0
-    source: Assets/Videos/park-intro.mp4
+    source: Assets/Videos/park/park1.mp4
+  - time: 15
+    source: Assets/Videos/park/park2.mp4
+  - time: 45
+    source: Assets/Videos/park/park3.mp4
   scriptFadeEvents:
   - time: 1
     direction: 0
     duration: 1.5
+  - time: 15
+    direction: 1
+    duration: 1.5
+  - time: 16
+    direction: 0
+    duration: 1.5
+  - time: 45
+    direction: 1
+    duration: 1.5
+  - time: 46
+    direction: 0
+    duration: 1.5
   scriptAnimateTextEvents: []
-  scriptSceneTransitionEvents: []
+  scriptSceneTransitionEvents:
+  - time: 60
+    nextScene: FS_EVENING
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1399080252
 Transform:

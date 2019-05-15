@@ -278,13 +278,15 @@ MonoBehaviour:
     source: {fileID: 8300000, guid: ae84d6beea05d794490ac363e4aaab0c, type: 3}
   scriptVideoEvents:
   - time: 4.5
-    source: Assets/Videos/eviction.vr_Trim.mp4
+    source: Assets/Videos/eviction/eviction.vr_Trim.mp4
   scriptFadeEvents:
   - time: 4.5
     direction: 0
     duration: 1
   scriptAnimateTextEvents: []
-  scriptSceneTransitionEvents: []
+  scriptSceneTransitionEvents:
+  - time: 15
+    nextScene: FS_MORNING
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1157300533
 Transform:

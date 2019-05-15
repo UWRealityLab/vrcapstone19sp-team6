@@ -345,7 +345,7 @@ MonoBehaviour:
   scriptAudioEvents: []
   scriptVideoEvents:
   - time: 0
-    source: Assets/Videos/park-intro.mp4
+    source: Assets/Videos/evening/billboard.mp4
   scriptFadeEvents:
   - time: 2
     direction: 0
