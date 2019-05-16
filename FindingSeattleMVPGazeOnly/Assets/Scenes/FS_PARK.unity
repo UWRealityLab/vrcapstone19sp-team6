@@ -247,14 +247,14 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -273,7 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665d6ae2da24d24478bcc5d0636e3b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptAudioEvents: []
+  scriptAudioEvents:
+  - time: 15
+    source: {fileID: 8300000, guid: 516d6f20b2eae8747b8d2c01e410117d, type: 3}
   scriptVideoEvents:
   - time: 0
     source: Assets/Videos/park/park1.mp4

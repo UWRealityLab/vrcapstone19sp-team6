@@ -247,14 +247,14 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptAudioEvents:
-  - time: 0
+  - time: 5
     source: {fileID: 8300000, guid: 93ad52a6e98447d4b8434c941fe44ee9, type: 3}
   - time: 50
     source: {fileID: 8300000, guid: a616eb853e4cdec4daecce6681a03150, type: 3}
@@ -293,21 +293,21 @@ MonoBehaviour:
   - time: 1
     direction: 0
     duration: 0
-  - time: 40
+  - time: 50
     direction: 1
     duration: 1.5
-  - time: 41
+  - time: 51
     direction: 0
     duration: 0
-  - time: 60
+  - time: 100
     direction: 1
     duration: 0
-  - time: 61
+  - time: 101
     direction: 0
     duration: 0
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
-  - time: 100
+  - time: 130
     nextScene: FS_MORNING
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1157300533
