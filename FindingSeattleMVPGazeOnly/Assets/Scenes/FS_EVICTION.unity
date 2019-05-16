@@ -274,18 +274,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptAudioEvents:
-  - time: 0.5
-    source: {fileID: 8300000, guid: ae84d6beea05d794490ac363e4aaab0c, type: 3}
+  - time: 0
+    source: {fileID: 8300000, guid: 93ad52a6e98447d4b8434c941fe44ee9, type: 3}
+  - time: 50
+    source: {fileID: 8300000, guid: a616eb853e4cdec4daecce6681a03150, type: 3}
+  - time: 50
+    source: {fileID: 8300000, guid: d8fd53d5d46c6b24788c089a336a83f9, type: 3}
+  - time: 100
+    source: {fileID: 8300000, guid: 63bbc8ad8a99d364197adb12eb70689a, type: 3}
   scriptVideoEvents:
-  - time: 4.5
-    source: Assets/Videos/eviction/eviction.vr_Trim.mp4
+  - time: 0
+    source: Assets/Videos/eviction/evictionNew.vr_Trim.mp4
+  - time: 50
+    source: Assets/Videos/eviction/mortgage.vr.mp4
+  - time: 100
+    source: Assets/Videos/eviction/tv.vr.mp4
   scriptFadeEvents:
-  - time: 4.5
+  - time: 1
     direction: 0
-    duration: 1
+    duration: 0
+  - time: 40
+    direction: 1
+    duration: 1.5
+  - time: 41
+    direction: 0
+    duration: 0
+  - time: 60
+    direction: 1
+    duration: 0
+  - time: 61
+    direction: 0
+    duration: 0
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
-  - time: 15
+  - time: 100
     nextScene: FS_MORNING
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1157300533
