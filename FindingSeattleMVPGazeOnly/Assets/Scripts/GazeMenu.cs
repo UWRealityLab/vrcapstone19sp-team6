@@ -9,7 +9,7 @@ public class GazeMenu : GazeInteractable
     public GameObject[] showOnMenuSelect;
 
     private readonly float CLOSED_SCALE = 0.08f;
-    private readonly float OPEN_SCALE = 0.55f;
+    private readonly float OPEN_SCALE = 0.50f;
     private bool isSelected;
 
     private Vector3[] menuItemPositions;

@@ -274,35 +274,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptAudioEvents:
-  - time: 5
+  - time: 1
     source: {fileID: 8300000, guid: 93ad52a6e98447d4b8434c941fe44ee9, type: 3}
-  - time: 50
+  - time: 21
     source: {fileID: 8300000, guid: a616eb853e4cdec4daecce6681a03150, type: 3}
-  - time: 50
+  - time: 30
     source: {fileID: 8300000, guid: d8fd53d5d46c6b24788c089a336a83f9, type: 3}
-  - time: 100
+  - time: 50
     source: {fileID: 8300000, guid: 63bbc8ad8a99d364197adb12eb70689a, type: 3}
   scriptVideoEvents:
   - time: 0
     source: Assets/Videos/eviction/evictionNew.vr_Trim.mp4
-  - time: 50
+  - time: 31
     source: Assets/Videos/eviction/mortgage.vr.mp4
-  - time: 100
+  - time: 50
     source: Assets/Videos/eviction/tv.vr.mp4
   scriptFadeEvents:
-  - time: 1
+  - time: 3
     direction: 0
     duration: 0
-  - time: 50
+  - time: 30
     direction: 1
-    duration: 1.5
-  - time: 51
+    duration: 0
+  - time: 32
     direction: 0
     duration: 0
-  - time: 100
+  - time: 49
     direction: 1
     duration: 0
-  - time: 101
+  - time: 52
     direction: 0
     duration: 0
   scriptAnimateTextEvents: []

@@ -284,7 +284,7 @@ MonoBehaviour:
   - time: 45
     source: Assets/Videos/park/park3.mp4
   scriptFadeEvents:
-  - time: 1
+  - time: 3
     direction: 0
     duration: 1.5
   - time: 15

@@ -273,41 +273,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665d6ae2da24d24478bcc5d0636e3b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptAudioEvents: []
-  scriptVideoEvents:
-  - time: 0
-    source: Assets/Videos/morning/looking-up.mp4
-  - time: 20
-    source: Assets/Videos/morning/on-bed.mp4
-  - time: 40
-    source: Assets/Videos/morning/hallway.mp4
-  - time: 60
-    source: Assets/Videos/morning/outside.mp4
-  scriptFadeEvents:
+  scriptAudioEvents:
   - time: 1
+    source: {fileID: 8300000, guid: 479a30e7ba26d5e44ae7fac6a1e01a97, type: 3}
+  - time: 15
+    source: {fileID: 8300000, guid: adc791b82d7e9314b847bd62704c3285, type: 3}
+  - time: 54
+    source: {fileID: 8300000, guid: 1b44840d436c9d44fa90d46d18b3ce69, type: 3}
+  scriptVideoEvents:
+  - time: 10
+    source: Assets/Videos/morning/outside.mp4
+  - time: 20
+    source: Assets/Videos/morning/front-desk.mp4
+  - time: 30
+    source: Assets/Videos/morning/hallway.mp4
+  - time: 50
+    source: Assets/Videos/morning/looking-up.mp4
+  - time: 58
+    source: Assets/Videos/morning/on-bed.mp4
+  scriptFadeEvents:
+  - time: 10
     direction: 0
     duration: 1.5
-  - time: 20
+  - time: 19
     direction: 1
     duration: 1.5
   - time: 21
     direction: 0
     duration: 1.5
-  - time: 40
+  - time: 29
     direction: 1
     duration: 1.5
-  - time: 41
+  - time: 31
     direction: 0
     duration: 1.5
-  - time: 60
+  - time: 39
     direction: 1
     duration: 1.5
-  - time: 61
+  - time: 51
     direction: 0
+    duration: 1.5
+  - time: 57
+    direction: 1
+    duration: 1.5
+  - time: 59
+    direction: 0
+    duration: 1.5
+  - time: 75
+    direction: 1
     duration: 1.5
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
-  - time: 80
+  - time: 76.5
     nextScene: FS_PARK
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &888709303
