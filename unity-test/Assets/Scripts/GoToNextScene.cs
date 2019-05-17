@@ -51,12 +51,6 @@ public class GoToNextScene : MonoBehaviour
         loader.progressBarFull = blankTexture;
         loader.loadingScreenWidthInMeters = 0f;
         loader.progressBarWidthInMeters = 0f;
-        //loader.front = blankTexture;
-        //loader.back = blankTexture;
-        //loader.left = blankTexture;
-        //loader.right = blankTexture;
-        //loader.top = blankTexture;
-        //loader.bottom = blankTexture;
         loader.loadingScreenFadeInTime = 0.1f;
         loader.loadingScreenFadeOutTime = 0.1f;
 

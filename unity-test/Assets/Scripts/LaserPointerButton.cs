@@ -55,7 +55,14 @@ public class LaserPointerButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         if (targetScene != null)
         {
-            FadeToScene(targetScene);
+            if (targetScene.Equals("%link%"))
+            {
+                Application.OpenURL("https://www.seattletimes.com/seattle-news/homeless/watch-9-intimate-stories-of-homelessness-told-live-at-ignite-project-homeless/");
+            }
+            else
+            {
+                FadeToScene(targetScene);
+            }
         }
     }
 

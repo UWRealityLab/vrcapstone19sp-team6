@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.findingseattlemvpgazeonly.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\vrteam6\\Documents\\vrcapstone19sp-team6\\FindingSeattleMVPGazeOnly\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "FindingSeattleMVPGazeOnly [Testing]"
+        }
+      }
+    }
+  ]
+}
