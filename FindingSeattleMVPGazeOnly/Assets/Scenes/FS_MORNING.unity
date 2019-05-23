@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 2048
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -275,56 +275,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptAudioEvents:
   - time: 1
-    source: {fileID: 8300000, guid: 479a30e7ba26d5e44ae7fac6a1e01a97, type: 3}
-  - time: 15
-    source: {fileID: 8300000, guid: adc791b82d7e9314b847bd62704c3285, type: 3}
-  - time: 54
-    source: {fileID: 8300000, guid: 1b44840d436c9d44fa90d46d18b3ce69, type: 3}
-  scriptVideoEvents:
-  - time: 10
-    source: Assets/Videos/morning/outside.mp4
-  - time: 20
-    source: Assets/Videos/morning/front-desk.mp4
-  - time: 30
-    source: Assets/Videos/morning/hallway.mp4
-  - time: 50
-    source: Assets/Videos/morning/looking-up.mp4
-  - time: 58
-    source: Assets/Videos/morning/on-bed.mp4
-  scriptFadeEvents:
-  - time: 10
-    direction: 0
-    duration: 1.5
-  - time: 19
-    direction: 1
-    duration: 1.5
-  - time: 21
-    direction: 0
-    duration: 1.5
+    source: {fileID: 8300000, guid: ff788093c62b9734b91455d68eb5705c, type: 3}
+    volume: 1
+  - time: 9
+    source: {fileID: 8300000, guid: 8fb3ee58a403c0f4189a8cda26988027, type: 3}
+    volume: 1
   - time: 29
-    direction: 1
-    duration: 1.5
-  - time: 31
+    source: {fileID: 8300000, guid: 8ea7294f50028444db043f13a3f3fee9, type: 3}
+    volume: 1
+  - time: 43
+    source: {fileID: 8300000, guid: e61f28a70a4885845815cb17b0abc54e, type: 3}
+    volume: 1
+  scriptVideoEvents:
+  - time: 0
+    source: Assets/Videos/morning/outside.mp4
+    speed: 1
+  - time: 8
+    source: Assets/Videos/morning/front-desk.mp4
+    speed: 1
+  - time: 28
+    source: Assets/Videos/morning/bathroom.mp4
+    speed: 1
+  - time: 42
+    source: Assets/Videos/morning/big-room-long.mp4
+    speed: 1
+  scriptFadeEvents:
+  - time: 2
     direction: 0
-    duration: 1.5
-  - time: 39
+    duration: 1
+  - time: 7
     direction: 1
-    duration: 1.5
-  - time: 51
+    duration: 1
+  - time: 10
     direction: 0
-    duration: 1.5
-  - time: 57
+    duration: 1
+  - time: 27
     direction: 1
-    duration: 1.5
-  - time: 59
+    duration: 1
+  - time: 30
     direction: 0
-    duration: 1.5
-  - time: 75
+    duration: 1
+  - time: 41
     direction: 1
-    duration: 1.5
+    duration: 1
+  - time: 44
+    direction: 0
+    duration: 1
+  - time: 60
+    direction: 1
+    duration: 1
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
-  - time: 76.5
+  - time: 61
     nextScene: FS_PARK
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &888709303

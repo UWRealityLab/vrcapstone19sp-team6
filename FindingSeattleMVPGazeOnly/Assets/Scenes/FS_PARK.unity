@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 2048
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -274,31 +274,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptAudioEvents:
-  - time: 15
-    source: {fileID: 8300000, guid: 516d6f20b2eae8747b8d2c01e410117d, type: 3}
+  - time: 8
+    source: {fileID: 8300000, guid: 76ed9a9a66c330043b4653f43b7f6e49, type: 3}
+    volume: 1
+  - time: 20
+    source: {fileID: 8300000, guid: a7aa5e7062d681f44bbc40f9539577b6, type: 3}
+    volume: 1
+  - time: 38
+    source: {fileID: 8300000, guid: 4e3542fe357fe2348857a3d694ed1e18, type: 3}
+    volume: 1
   scriptVideoEvents:
-  - time: 0
+  - time: 6
+    source: Assets/Videos/morning/on-bed.mp4
+    speed: 1
+  - time: 18
     source: Assets/Videos/park/park1.mp4
-  - time: 15
+    speed: 1
+  - time: 36
     source: Assets/Videos/park/park2.mp4
-  - time: 45
-    source: Assets/Videos/park/park3.mp4
+    speed: 1
   scriptFadeEvents:
-  - time: 3
+  - time: 8
     direction: 0
     duration: 1.5
-  - time: 15
+  - time: 17
     direction: 1
-    duration: 1.5
-  - time: 16
+    duration: 1
+  - time: 20
     direction: 0
-    duration: 1.5
-  - time: 45
+    duration: 1
+  - time: 35
     direction: 1
-    duration: 1.5
-  - time: 46
+    duration: 1
+  - time: 38
     direction: 0
-    duration: 1.5
+    duration: 1
+  - time: 59
+    direction: 1
+    duration: 1
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
   - time: 60

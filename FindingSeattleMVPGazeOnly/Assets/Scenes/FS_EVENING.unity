@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 2048
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -342,14 +342,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665d6ae2da24d24478bcc5d0636e3b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptAudioEvents: []
+  scriptAudioEvents:
+  - time: 1
+    source: {fileID: 8300000, guid: d0b08c4a955a7f145af9039f6c17b998, type: 3}
+    volume: 1
+  - time: 18
+    source: {fileID: 8300000, guid: c7318b4196e0c2541b4ec7f574121e37, type: 3}
+    volume: 1
+  - time: 35
+    source: {fileID: 8300000, guid: e53abab39a615ff4583961dc67f01826, type: 3}
+    volume: 1
+  - time: 45
+    source: {fileID: 8300000, guid: 37757eaccc29ccf45b82cd1cd7c9dfb3, type: 3}
+    volume: 1
+  - time: 52
+    source: {fileID: 8300000, guid: 0870e8f6abe264b4dab7227e84cb8324, type: 3}
+    volume: 1
+  - time: 58
+    source: {fileID: 8300000, guid: 7da00aff0fce52c46bbe7721c19a1a12, type: 3}
+    volume: 1
   scriptVideoEvents:
-  - time: 0
-    source: Assets/Videos/evening/billboard.mp4
+  - time: 1
+    source: Assets/Videos/evening/entrance.vr.mp4
+    speed: 1
+  - time: 18
+    source: Assets/Videos/evening/bunkbed.vr.mp4
+    speed: 1
+  - time: 35
+    source: Assets/Videos/evening/lockers.vr.mp4
+    speed: 1
+  - time: 45
+    source: Assets/Videos/evening/laundry.vr.mp4
+    speed: 1
+  - time: 52
+    source: Assets/Videos/evening/shower.vr.mp4
+    speed: 1
+  - time: 58
+    source: Assets/Videos/evening/success.vr.mp4
+    speed: 1
   scriptFadeEvents:
   - time: 2
     direction: 0
-    duration: 1.5
+    duration: 1
+  - time: 18
+    direction: 1
+    duration: 1
+  - time: 20
+    direction: 0
+    duration: 1
+  - time: 35
+    direction: 1
+    duration: 1
+  - time: 37
+    direction: 0
+    duration: 1
+  - time: 45
+    direction: 1
+    duration: 1
+  - time: 47
+    direction: 0
+    duration: 1
+  - time: 52
+    direction: 1
+    duration: 1
+  - time: 54
+    direction: 0
+    duration: 1
+  - time: 58
+    direction: 1
+    duration: 1
+  - time: 60
+    direction: 0
+    duration: 1
+  - time: 68
+    direction: 1
+    duration: 1
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents: []
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
