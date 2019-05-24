@@ -7,16 +7,22 @@ ModelImporter:
     100002: Circle
     100004: Lamp
     100006: //RootNode
+    100008: Circle_001
     400000: Camera
     400002: Circle
     400004: Lamp
     400006: //RootNode
+    400008: Circle_001
     2000000: Camera
     2100000: No Name
     2300000: Circle
+    2300002: Circle_001
     3300000: Circle
+    3300002: Circle_001
     4300000: Circle
+    4300002: Circle_001
     10800000: Lamp
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1

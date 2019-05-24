@@ -11,11 +11,11 @@ public class FS_Script : MonoBehaviour
     public enum Direction { IN, OUT };
 
     [System.Serializable]
-    public class ScriptAudio { public float time; public AudioClip source; public float volume = 1.0f; }
+    public class ScriptAudio { public float time; public AudioClip source; }
     public List<ScriptAudio> scriptAudioEvents;
 
     [System.Serializable]
-    public class ScriptVideo { public float time; public string source; public float speed = 1.0f; }
+    public class ScriptVideo { public float time; public string source; }
     public List<ScriptVideo> scriptVideoEvents;
 
     [System.Serializable]
@@ -56,11 +56,6 @@ public class FS_Script : MonoBehaviour
     public void Play()
     {
         playing = true;
-    }
-    
-    public void Audio()
-    {
-
     }
 
     private void Update()
@@ -123,7 +118,6 @@ public class FS_Script : MonoBehaviour
 
     private void HandleScriptAudio(ScriptAudio scriptAudio)
     {
-        VRAudio.volume = scriptAudio.volume;
         VRAudio.PlayOneShot(scriptAudio.source);
     }
 
@@ -132,7 +126,6 @@ public class FS_Script : MonoBehaviour
         RenderSettings.skybox = VRVideoMaterial;
         VRVideo.url = scriptVideo.source;
         VRVideo.frame = 0;
-        VRVideo.playbackSpeed = scriptVideo.speed;
         VRVideo.Play();
     }
 

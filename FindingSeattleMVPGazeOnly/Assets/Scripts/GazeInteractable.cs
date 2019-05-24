@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 using Valve.VR;
 
 public class GazeInteractable : MonoBehaviour
@@ -11,10 +13,12 @@ public class GazeInteractable : MonoBehaviour
     public GameObject[] showOnSelect;
     public GameObject[] hideOnSelect;
 
-    public enum Action { CHANGE_SCENE, NO_ACTION };
+    public enum Action { CHANGE_SCENE, NO_ACTION, VIDEO_PLAYER};
     public Action onSelectAction;
     public string onSelectNextScene;
     public GazeMenu gazeMenu;
+
+    public VideoPlayer videoPlayer;
 
     protected virtual void Start()
     {
@@ -37,8 +41,12 @@ public class GazeInteractable : MonoBehaviour
             StartSceneTransition();
             gazeMenu.Deselect();
         }
+        if(onSelectAction == Action.VIDEO_PLAYER)
+        {
+            videoPlayer.Play();
+        }
+    
     }
-
     public virtual void Deselect()
     {
         foreach (GameObject obj in showOnSelect)
@@ -72,6 +80,9 @@ public class GazeInteractable : MonoBehaviour
         foreach (GameObject obj in hideOnGaze)
         {
             obj.SetActive(true);
+        }
+        if (onSelectAction == Action.VIDEO_PLAYER) {
+            videoPlayer.Pause();
         }
     }
 

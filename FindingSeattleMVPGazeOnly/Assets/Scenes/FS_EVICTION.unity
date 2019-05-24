@@ -297,37 +297,46 @@ MonoBehaviour:
     volume: 1
   scriptVideoEvents:
   - time: 0
-    source: Assets/Videos/eviction/entryway.vr.mp4
-    speed: 0.5
-  - time: 48
-    source: Assets/Videos/eviction/mortgage.vr.mp4
+    source: Assets/Videos/eviction-new/hall-long.mp4
     speed: 1
-  - time: 61
-    source: Assets/Videos/eviction/tv.vr.mp4
+  - time: 20
+    source: Assets/Videos/eviction-new/inside-apartment.mp4
     speed: 1
-  - time: 75
-    source: Assets/Videos/eviction/evictionnew.vr_Trim.mp4
+  - time: 47
+    source: Assets/Videos/eviction-new/zillow-scroll.mp4
+    speed: 1
+  - time: 60
+    source: Assets/Videos/eviction-new/scroll-shelter.mp4
+    speed: 1
+  - time: 74
+    source: Assets/Videos/eviction-new/eviction-notice.mp4
     speed: 1
   scriptFadeEvents:
   - time: 2
     direction: 0
     duration: 1
-  - time: 47
+  - time: 19
     direction: 1
     duration: 1
-  - time: 49
+  - time: 21
     direction: 0
     duration: 1
-  - time: 60
+  - time: 46
     direction: 1
     duration: 1
-  - time: 62
+  - time: 48
     direction: 0
     duration: 1
-  - time: 74
+  - time: 59
     direction: 1
     duration: 1
-  - time: 76
+  - time: 61
+    direction: 0
+    duration: 1
+  - time: 73
+    direction: 1
+    duration: 1
+  - time: 75
     direction: 0
     duration: 1
   - time: 92
@@ -335,7 +344,7 @@ MonoBehaviour:
     duration: 1
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
-  - time: 92
+  - time: 93
     nextScene: FS_MORNING
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1157300533

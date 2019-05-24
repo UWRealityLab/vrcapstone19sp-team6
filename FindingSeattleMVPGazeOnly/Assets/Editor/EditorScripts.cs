@@ -11,7 +11,7 @@ class EditorScripts : EditorWindow
     {
         string currentSceneName = EditorApplication.currentScene;
         File.WriteAllText(".lastScene", currentSceneName);
-        EditorApplication.OpenScene("Assets/Scenes/FS_START.unity");
+        EditorApplication.OpenScene("Assets/Scenes/FS_INITIALIZE.unity");
         EditorApplication.isPlaying = true;
     }
 

@@ -274,42 +274,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptAudioEvents:
-  - time: 8
+  - time: 5
     source: {fileID: 8300000, guid: 76ed9a9a66c330043b4653f43b7f6e49, type: 3}
     volume: 1
-  - time: 20
+  - time: 17
     source: {fileID: 8300000, guid: a7aa5e7062d681f44bbc40f9539577b6, type: 3}
     volume: 1
-  - time: 38
+  - time: 35
     source: {fileID: 8300000, guid: 4e3542fe357fe2348857a3d694ed1e18, type: 3}
     volume: 1
   scriptVideoEvents:
-  - time: 6
+  - time: 3
     source: Assets/Videos/morning/on-bed.mp4
     speed: 1
-  - time: 18
+  - time: 15
     source: Assets/Videos/park/park1.mp4
     speed: 1
-  - time: 36
-    source: Assets/Videos/park/park2.mp4
+  - time: 33
+    source: Assets/Videos/park/park2_Trim.mp4
     speed: 1
   scriptFadeEvents:
-  - time: 8
+  - time: 5
     direction: 0
     duration: 1.5
-  - time: 17
+  - time: 14
     direction: 1
     duration: 1
-  - time: 20
+  - time: 17
     direction: 0
+    duration: 1
+  - time: 32
+    direction: 1
     duration: 1
   - time: 35
-    direction: 1
-    duration: 1
-  - time: 38
     direction: 0
     duration: 1
-  - time: 59
+  - time: 56
     direction: 1
     duration: 1
   scriptAnimateTextEvents: []
