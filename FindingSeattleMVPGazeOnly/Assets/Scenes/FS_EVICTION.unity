@@ -276,76 +276,65 @@ MonoBehaviour:
   scriptAudioEvents:
   - time: 1
     source: {fileID: 8300000, guid: 70e27c4fd55e81246bb8a4fa59148baf, type: 3}
-    volume: 0.8
   - time: 21
-    source: {fileID: 8300000, guid: 65be70e284c93b745adebeae0684f8a7, type: 3}
-    volume: 1
-  - time: 39
-    source: {fileID: 8300000, guid: c7c8108fb34d19f4d82cdad95ccbd5e7, type: 3}
-    volume: 1
-  - time: 48
-    source: {fileID: 8300000, guid: c463ec5b7c61ab946914877cf1ef3473, type: 3}
-    volume: 1
-  - time: 61
+    source: {fileID: 8300000, guid: a80d82e42323af74ab9878e3d12cd423, type: 3}
+  - time: 31
+    source: {fileID: 8300000, guid: 7de282a17308353439f829bbb7a5adc6, type: 3}
+  - time: 37
     source: {fileID: 8300000, guid: 2192daef66274504e9213a5b2358d9a3, type: 3}
-    volume: 1
-  - time: 75
-    source: {fileID: 8300000, guid: 504e0e78d46c08d4fa211587abbc0ea5, type: 3}
-    volume: 1
-  - time: 72
-    source: {fileID: 8300000, guid: a616eb853e4cdec4daecce6681a03150, type: 3}
-    volume: 1
-  scriptVideoEvents:
-  - time: 0
-    source: Assets/Videos/eviction-new/hall-long.mp4
-    speed: 1
-  - time: 20
-    source: Assets/Videos/eviction-new/inside-apartment.mp4
-    speed: 1
+  - time: 49
+    source: {fileID: 8300000, guid: 904f7cd511efef344b5b7150283b4bdd, type: 3}
   - time: 47
-    source: Assets/Videos/eviction-new/zillow-scroll.mp4
-    speed: 1
-  - time: 60
-    source: Assets/Videos/eviction-new/scroll-shelter.mp4
-    speed: 1
-  - time: 74
+    source: {fileID: 8300000, guid: a616eb853e4cdec4daecce6681a03150, type: 3}
+  scriptVideoEvents:
+  - time: 1
+    source: Assets/Videos/eviction-new/hall-long.mp4
+  - time: 21
+    source: Assets/Videos/eviction/seattle-dying.vr.mp4
+  - time: 31
+    source: Assets/Videos/eviction/apartment-search.vr.mp4
+  - time: 37
+    source: Assets/Videos/eviction/shelter-research.vr.mp4
+  - time: 49
     source: Assets/Videos/eviction-new/eviction-notice.mp4
-    speed: 1
   scriptFadeEvents:
   - time: 2
     direction: 0
     duration: 1
-  - time: 19
+  - time: 20.5
     direction: 1
-    duration: 1
-  - time: 21
+    duration: 0.5
+  - time: 22.5
     direction: 0
-    duration: 1
-  - time: 46
+    duration: 0.5
+  - time: 30.5
     direction: 1
-    duration: 1
-  - time: 48
+    duration: 0.5
+  - time: 32.5
     direction: 0
-    duration: 1
-  - time: 59
+    duration: 0.5
+  - time: 36.5
     direction: 1
-    duration: 1
-  - time: 61
+    duration: 0.5
+  - time: 38.5
     direction: 0
-    duration: 1
-  - time: 73
+    duration: 0.5
+  - time: 46.5
     direction: 1
-    duration: 1
-  - time: 75
+    duration: 0.5
+  - time: 50.5
     direction: 0
-    duration: 1
-  - time: 92
+    duration: 0.5
+  - time: 58.5
     direction: 1
     duration: 1
   scriptAnimateTextEvents: []
   scriptSceneTransitionEvents:
-  - time: 93
+  - time: 59.5
     nextScene: FS_MORNING
+  scriptShowChoiceTime: -1
+  scriptChoiceMainProp: {fileID: 0}
+  scriptChoiceSelectionProps: []
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1157300533
 Transform:

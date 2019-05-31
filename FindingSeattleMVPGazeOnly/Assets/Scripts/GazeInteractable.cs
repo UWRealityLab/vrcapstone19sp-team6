@@ -12,13 +12,25 @@ public class GazeInteractable : MonoBehaviour
     public GameObject[] hideOnGaze;
     public GameObject[] showOnSelect;
     public GameObject[] hideOnSelect;
+    public GameObject gazeArea;
+    public Material material;
 
-    public enum Action { CHANGE_SCENE, NO_ACTION, VIDEO_PLAYER};
+    public enum Action { CHANGE_SCENE, NO_ACTION, VIDEO_PLAYER, NARRATIVE_CHOICE };
     public Action onSelectAction;
+
+    // If CHANGE_SCENE: happens immediately
+    // If NARRATIVE_CHOICE: happens after onSelectNarrativeTimeBeforeTransition seconds;
     public string onSelectNextScene;
+    public AudioClip onSelectNarrativeAudioClip;
+    public GameObject[] onSelectNarrativeChoiceHide;
+    public string onSelectNarrativeVideoClip;
+    public float onSelectNarrativeTimeBeforeTransition;
+
     public GazeMenu gazeMenu;
 
+
     public VideoPlayer videoPlayer;
+    public AudioSource audioPlayer;
 
     protected virtual void Start()
     {
@@ -41,12 +53,59 @@ public class GazeInteractable : MonoBehaviour
             StartSceneTransition();
             gazeMenu.Deselect();
         }
-        if(onSelectAction == Action.VIDEO_PLAYER)
+        if (onSelectAction == Action.VIDEO_PLAYER)
         {
+            gazeArea.GetComponent<Renderer>().material = material;
+
             videoPlayer.Play();
         }
-    
+        if (onSelectAction == Action.NARRATIVE_CHOICE)
+        {
+            /**
+             * To use, make each interactable in a narrative choice be responsible for hiding all of
+             * the narrative choice GameObjects, and also give it an appropriate audio clip and video clip that it will play.
+             * After the specified number of seconds, it will automatically transition to the next scene.
+             */
+            foreach (GameObject obj in onSelectNarrativeChoiceHide)
+            {
+                obj.SetActive(false);
+            }
+
+            SteamVR_Fade.Start(Color.black, 1f);
+            Invoke("NChoicePlayVideo", 1f);
+            Invoke("NChoicePlayAudio", 1f);
+            Invoke("NChoiceFadeIn", 3f);
+            Invoke("NChoiceFadeOut", onSelectNarrativeTimeBeforeTransition); // + 1f for time to start playing, - 1f to start fading before it ends
+            Invoke("NChoiceAdvanceScene", onSelectNarrativeTimeBeforeTransition + 1f); // + 1f for time to start playing
+        }
     }
+
+    private void NChoicePlayAudio()
+    {
+        audioPlayer.PlayOneShot(onSelectNarrativeAudioClip);
+    }
+
+    private void NChoicePlayVideo()
+    {
+        videoPlayer.url = onSelectNarrativeVideoClip;
+        videoPlayer.Play();
+    }
+
+    private void NChoiceAdvanceScene()
+    {
+        SteamVR_LoadLevel.Begin(onSelectNextScene);
+    }
+
+    private void NChoiceFadeIn()
+    {
+        SteamVR_Fade.Start(Color.clear, 1f);
+    }
+
+    private void NChoiceFadeOut()
+    {
+        SteamVR_Fade.Start(Color.black, 1f);
+    }
+
     public virtual void Deselect()
     {
         foreach (GameObject obj in showOnSelect)

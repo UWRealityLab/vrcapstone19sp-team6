@@ -30,6 +30,13 @@ public class FS_Script : MonoBehaviour
     public class ScriptSceneTransition { public float time; public string nextScene; }
     public List<ScriptSceneTransition> scriptSceneTransitionEvents;
 
+    public float scriptShowChoiceTime = -1;
+    public AnimatedText scriptChoiceMainProp;
+    public AnimatedText[] scriptChoiceSelectionProps;
+
+    public float MUSEUM_scriptLightsOnTime = -1;
+    public Light[] MUSEUM_scriptLights;
+
     public Material VRVideoMaterial;
 
     private VideoPlayer VRVideo;
@@ -46,6 +53,15 @@ public class FS_Script : MonoBehaviour
         
         SteamVR_Fade.Start(Color.black, 0f);
         VRVideo.Stop();
+
+        // Start with the lights off in the museum
+        if (MUSEUM_scriptLights != null)
+        {
+            foreach (Light light in MUSEUM_scriptLights)
+            {
+                light.intensity = 0.0f;
+            }
+        }
     }
 
     public void Pause()
@@ -114,6 +130,18 @@ public class FS_Script : MonoBehaviour
                 i--;
             }
         }
+
+        if (scriptShowChoiceTime != -1 && scriptShowChoiceTime < t)
+        {
+            HandleScriptShowChoice();
+            scriptShowChoiceTime = -1;
+        }
+
+        if (MUSEUM_scriptLightsOnTime != -1 && MUSEUM_scriptLightsOnTime < t)
+        {
+            HandleTurnOnMuseumLights();
+            MUSEUM_scriptLightsOnTime = -1;
+        }
     }
 
     private void HandleScriptAudio(ScriptAudio scriptAudio)
@@ -151,5 +179,27 @@ public class FS_Script : MonoBehaviour
     {
         //SceneManager.LoadScene(scriptSceneTransition.nextScene);
         SteamVR_LoadLevel.Begin(scriptSceneTransition.nextScene);
+    }
+
+    private void HandleScriptShowChoice()
+    {
+        scriptChoiceMainProp.Enter(3.0f);
+        Invoke("ShowChoiceAnimateSelectionProps", 0.5f);
+    }
+
+    private void ShowChoiceAnimateSelectionProps()
+    {
+        foreach (AnimatedText selectionProp in scriptChoiceSelectionProps)
+        {
+            selectionProp.Enter(3.0f);
+        }
+    }
+
+    private void HandleTurnOnMuseumLights()
+    {
+        foreach (Light light in MUSEUM_scriptLights)
+        {
+            light.intensity = 2.0f;
+        }
     }
 }

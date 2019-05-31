@@ -255,10 +255,17 @@ MonoBehaviour:
   hideOnGaze: []
   showOnSelect: []
   hideOnSelect: []
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 0
   onSelectNextScene: FS_FINAL
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!64 &85963017
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -473,10 +480,17 @@ MonoBehaviour:
   hideOnSelect:
   - {fileID: 1959420393}
   - {fileID: 2114568908}
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 1
   onSelectNextScene: 
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
   menuContainer: {fileID: 145493731}
   menuItemColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   showOnMenuSelect:
@@ -545,6 +559,26 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: field of view
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_GateFitMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.132
@@ -588,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gazeDistance: 500
-  gazeTimeToSelect: 1
+  gazeTimeToSelect: 2
   progressBar: {fileID: 1881969249}
   gazeMenu: {fileID: 146769412}
   gazeMenuDeselect: {fileID: 657168008}
@@ -645,10 +679,17 @@ MonoBehaviour:
   hideOnGaze: []
   showOnSelect: []
   hideOnSelect: []
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 0
   onSelectNextScene: FS_MORNING
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!64 &394364452
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1064,10 +1105,17 @@ MonoBehaviour:
   hideOnGaze: []
   showOnSelect: []
   hideOnSelect: []
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 0
   onSelectNextScene: FS_EVICTION
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!64 &597360557
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1391,10 +1439,17 @@ MonoBehaviour:
   hideOnGaze: []
   showOnSelect: []
   hideOnSelect: []
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 0
   onSelectNextScene: FS_EVENING
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!64 &788404943
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2083,10 +2138,17 @@ MonoBehaviour:
   hideOnGaze: []
   showOnSelect: []
   hideOnSelect: []
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 0
   onSelectNextScene: FS_PARK
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!64 &1218410523
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2620,10 +2682,17 @@ MonoBehaviour:
   hideOnGaze: []
   showOnSelect: []
   hideOnSelect: []
+  gazeArea: {fileID: 0}
+  material: {fileID: 0}
   onSelectAction: 0
   onSelectNextScene: FS_START
+  onSelectNarrativeAudioClip: {fileID: 0}
+  onSelectNarrativeChoiceHide: []
+  onSelectNarrativeVideoClip: 
+  onSelectNarrativeTimeBeforeTransition: 0
   gazeMenu: {fileID: 146769412}
   videoPlayer: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!64 &1853354190
 MeshCollider:
   m_ObjectHideFlags: 0
