@@ -288,7 +288,7 @@ MonoBehaviour:
     source: {fileID: 8300000, guid: a616eb853e4cdec4daecce6681a03150, type: 3}
   scriptVideoEvents:
   - time: 1
-    source: Assets/Videos/eviction-new/hall-long.mp4
+    source: Assets/Videos/eviction/apartment-search-converted.vr.mp4
   - time: 21
     source: Assets/Videos/eviction/seattle-dying.vr.mp4
   - time: 31
@@ -335,6 +335,8 @@ MonoBehaviour:
   scriptShowChoiceTime: -1
   scriptChoiceMainProp: {fileID: 0}
   scriptChoiceSelectionProps: []
+  MUSEUM_scriptLightsOnTime: -1
+  MUSEUM_scriptLights: []
   VRVideoMaterial: {fileID: 2100000, guid: 27b90ea2e3dc96a4fb75056096762fa9, type: 2}
 --- !u!4 &1157300533
 Transform:
