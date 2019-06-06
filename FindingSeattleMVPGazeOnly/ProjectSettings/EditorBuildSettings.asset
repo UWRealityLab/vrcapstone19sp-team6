@@ -6,24 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/FindingSeattleExperience.unity
+    guid: d87fe4dc62378474da1015233a87b4e8
+  - enabled: 0
     path: Assets/Scenes/FS_INITIALIZE.unity
     guid: 2bb4da85f81aa5f4bb1d60021fb38ac3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FS_START.unity
     guid: fec2db98ba92fce42ab6a3bca33a4fdf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FS_EVICTION.unity
     guid: d80c71574d94fc24baf1d3c8d2d798bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FS_MORNING.unity
     guid: c64da401a1fcf32488fb6b585eff7f16
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FS_PARK.unity
     guid: 555b66aa2c16c8a4dbbc80956dba6166
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FS_EVENING.unity
     guid: 563d519d6f8c01e45b2f047980af5928
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FS_FINAL.unity
     guid: 67bcd7b8dccd8194184e57f0987375c3
   m_configObjects: {}
