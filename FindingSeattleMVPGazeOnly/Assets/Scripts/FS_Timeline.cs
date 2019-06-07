@@ -32,8 +32,8 @@ public class FS_Timeline : MonoBehaviour
 
     float SetupStartScene(float t)
     {
-        ScriptPlayAudioClip(t + 8, "music/intro_piano_music", 24);
-        t = ScriptPlaySegment(t, 16.75f, "morning/small-room-converted", "narration/24");
+        ScriptPlayAudioClip(t + 8, "music/intro_piano_music", 24, 0.7f);
+        t = ScriptPlaySegment(t, 16.75f, "morning/small-room-converted", "narration/24", 0.7f);
         t = ScriptShowStartText(t);
 
         return t;
