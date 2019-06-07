@@ -25,7 +25,6 @@ public class FS_Timeline : MonoBehaviour
 
     void SetupInstructionsScene(float t)
     {
-        // TODO: Still working on this one!
         ScriptShowInstructions(t);
 
         // No return -- give the user time to situate themselves before choosing to go on
@@ -34,7 +33,7 @@ public class FS_Timeline : MonoBehaviour
     float SetupStartScene(float t)
     {
         ScriptPlayAudioClip(t + 8, "music/intro_piano_music", 24);
-        t = ScriptPlaySegment(t, 16.75f, "morning/small-room", "narration/24");
+        t = ScriptPlaySegment(t, 16.75f, "morning/small-room-converted", "narration/24");
         t = ScriptShowStartText(t);
 
         return t;
@@ -42,31 +41,32 @@ public class FS_Timeline : MonoBehaviour
 
     float SetupEvictionScene(float t)
     {
-        t = ScriptPlaySegment(t, 21, "eviction/inside-apartment", "other_audio/bank-knocking-shortened");
-        t = ScriptPlaySegment(t, 10, "eviction/hall-short", "narration/short1");
-        t = ScriptPlaySegment(t, 6, "eviction/zillow-scroll", "narration/short3");
-        t = ScriptPlaySegment(t, 12, "eviction/scroll-shelter", "narration/4");
-        ScriptPlayAudioClip(t + 1, "other_audio/doorknock", 5);
-        t = ScriptPlaySegment(t, 9, "eviction/eviction-notice", "narration/short5");
+        t = ScriptPlaySegment(t, 21, "eviction/outside-apartment-converted", "other_audio/bank-knocking-shortened");
+        t = ScriptPlaySegment(t, 11, "eviction/hall-short-converted", "narration/short1");
+        t = ScriptPlaySegment(t, 6, "eviction/zillow-scroll-converted", "narration/short3");
+        t = ScriptPlaySegment(t, 12, "eviction/scroll-shelter-converted", "narration/4");
+        ScriptPlayAudioClip(t + 1, "other_audio/doorknock", 5, 0.5f);
+        t = ScriptPlaySegment(t, 9, "eviction/eviction-notice-injected-converted", "narration/short5");
 
         return t;
     }
 
     float SetupMorningScene(float t)
     {
-        t = ScriptPlaySegment(t, 8, "morning/outside", "narration/6");
-        t = ScriptPlaySegment(t, 13, "morning/front-desk", "narration/short7");
-        t = ScriptPlaySegment(t, 10, "morning/bathroom", "narration/8alternate");
-        t = ScriptPlaySegment(t, 10, "morning/big-room-long", "narration/9");
+        t = ScriptPlaySegment(t, 8, "morning/outside-converted", "narration/6");
+        t = ScriptPlaySegment(t, 13, "morning/front-desk-converted", "narration/short7");
+        t = ScriptPlaySegment(t, 10, "morning/bathroom-converted", "narration/8alternate");
+        t = ScriptPlaySegment(t, 10, "morning/big-room-long-converted", "narration/9");
 
         return t;
     }
 
     void SetupParkScene(float t)
     {
-        t = ScriptPlaySegment(t, 8, "morning/on-bed", "narration/short11");
-        t = ScriptPlaySegment(t, 11, "park/park1", "narration/short12");
-        t = ScriptPlaySegment(t, 21, "park/park2_Trim", "narration/13");
+        t = ScriptPlaySegment(t, 8, "park/on-bed-converted", "narration/short11");
+        t = ScriptPlaySegment(t, 9, "park/park1-converted", "narration/short12");
+        t = ScriptPlaySegment(t, 21, "park/park2-converted", "narration/13");
+        t = ScriptPlaySegment(t, 15, "park/park_choice-injected-converted", "narration/21alternate");
         ScriptShowChoiceScene(t);
 
         // No return -- give the user time to make a choice
@@ -74,27 +74,27 @@ public class FS_Timeline : MonoBehaviour
 
     float SetupChoseShelterScene(float t)
     {
-        t = ScriptPlaySegment(t, 16, "morning/hallway", "narration/22alternate");
+        t = ScriptPlaySegment(t, 16, "morning/hallway", "narration/23alternate");
 
         return t;
     }
 
     float SetupChoseWorkScene(float t)
     {
-        t = ScriptPlaySegment(t, 14, "morning/hallway", "narration/23alternate");
+        t = ScriptPlaySegment(t, 14, "park/chose-work-converted", "narration/22alternate");
 
         return t;
     }
 
     float SetupEveningScene(float t)
     {
-        t = ScriptPlaySegment(t, 12, "evening/entrance", "narration/short14");
-        t = ScriptPlaySegment(t, 16, "evening/bunkbed", "narration/15");
-        t = ScriptPlaySegment(t, 7, "evening/lockers", "narration/16");
-        t = ScriptPlaySegment(t, 6, "evening/laundry_trim", "narration/short17-18");
+        t = ScriptPlaySegment(t, 12, "evening/entrance-converted", "narration/short14");
+        t = ScriptPlaySegment(t, 16, "evening/bunkbed-converted", "narration/15");
+        t = ScriptPlaySegment(t, 7, "evening/lockers-converted", "narration/16");
+        t = ScriptPlaySegment(t, 6, "evening/laundry-converted", "narration/short17-18");
         ScriptPlayAudioClip(t + 7, "music/end_piano_music", 28);
-        t = ScriptPlaySegment(t, 12, "evening/shower", "narration/19");
-        t = ScriptPlaySegment(t, 24, "evening/success", "narration/25");
+        t = ScriptPlaySegment(t, 12, "evening/shower-converted", "narration/19");
+        t = ScriptPlaySegment(t, 24, "evening/success-converted", "narration/25");
 
         return t;
     }
@@ -167,13 +167,26 @@ public class FS_Timeline : MonoBehaviour
         return startTime + audioDuration;
     }
 
-    private float ScriptShowInstructions(float startTime)
+    private void ScriptShowInstructions(float startTime)
     {
-        // TODO: Still working on this one!
-
-
-
-        return startTime;
+        timeline.Add(new FadeEvent()
+        {
+            time = startTime,
+            fadeDuration = 0.5f,
+            fadeIn = true
+        });
+        timeline.Add(new VideoEvent()
+        {
+            time = startTime,
+            videoName = "instructions/atrium",
+            videoPlayer = videoPlayer
+        });
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime + 0.5f,
+            obj = instructionsContainer,
+            load = true
+        });
     }
 
     private float ScriptShowStartText(float startTime)
@@ -299,9 +312,22 @@ public class FS_Timeline : MonoBehaviour
 
     private void ScriptShowMuseumScene(float startTime)
     {
-        timeline.Add(new LoadObjectEvent()
+        timeline.Add(new FadeEvent()
         {
             time = startTime,
+            fadeDuration = 0.5f,
+            fadeIn = false
+        });
+        timeline.Add(new FadeEvent()
+        {
+            // + BUFFER to let the video load and start playing! It's hacky but it works. We are willing to take the low road here on team 6.
+            time = startTime + 0.5f + BUFFER,
+            fadeDuration = 0.5f,
+            fadeIn = true
+        });
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime + 0.5f,
             obj = museumSceneContainer,
             load = true
         });
@@ -480,9 +506,11 @@ public class FS_Timeline : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         audioSource = GetComponent<AudioSource>();
 
+        UnityEngine.XR.InputTracking.disablePositionalTracking = true;
+
         // Initialize all scenes, using a helper function to start from the first scene
         // and initialize events for all scenes until the choice
-        SetupSceneAndOnward("start");
+        SetupSceneAndOnward("instructions");
     }
 
     // Update the user's current time in the experience, and
