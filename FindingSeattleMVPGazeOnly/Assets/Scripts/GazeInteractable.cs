@@ -15,7 +15,7 @@ public class GazeInteractable : MonoBehaviour
     public GameObject gazeArea;
     public Material material;
 
-    public enum Action { CHANGE_SCENE, NO_ACTION, VIDEO_PLAYER };
+    public enum Action { CHANGE_SCENE, NO_ACTION, VIDEO_PLAYER, CHANGE_SCENE_MENU };
     public Action onSelectAction;
 
     // If CHANGE_SCENE: happens immediately
@@ -43,12 +43,14 @@ public class GazeInteractable : MonoBehaviour
         {
             obj.SetActive(false);
         }
-        if (onSelectAction == Action.CHANGE_SCENE)
+        if (onSelectAction == Action.CHANGE_SCENE_MENU)
         {
             gazeMenu.Deselect();
             timeline.SetupSceneAndOnward(onSelectNextScene);
-            //StartSceneTransition();
-            //gazeMenu.Deselect();
+        }
+        if (onSelectAction == Action.CHANGE_SCENE)
+        {
+            timeline.SetupSceneAndOnward(onSelectNextScene);
         }
         if (onSelectAction == Action.VIDEO_PLAYER)
         {

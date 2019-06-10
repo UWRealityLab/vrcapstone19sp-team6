@@ -90,6 +90,11 @@ public class GazeTracker : MonoBehaviour
                     // Show the progress bar in the correct position, centered on the
                     // GazeInteractable that corresponds to the current GazeArea
                     progressBar.fillAmount = currentGazeTime / gazeTimeToSelect;
+                    if (currentGazeTime / gazeTimeToSelect > 1.0f)
+                    {
+                        progressBar.fillAmount = 0.0f;
+                    }
+
                     Transform progressBarParent = progressBar.transform.parent;
                     progressBarParent.SetPositionAndRotation(
                             currentGazeInteractable.GetPosition(),

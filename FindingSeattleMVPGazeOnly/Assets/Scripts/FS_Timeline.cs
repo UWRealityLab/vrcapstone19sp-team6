@@ -21,7 +21,11 @@ public class FS_Timeline : MonoBehaviour
     public AnimatedText[] experienceIntroductionTexts;
     public AnimatedText[] choiceSceneObjects;
     public AnimatedText[] museumInstructionTexts;
+    public MuseumExhibit[] museumExhibits;
     public GameObject museumSceneContainer;
+    public GameObject menu;
+    public GameObject camera;
+    public GameObject player;
 
     void SetupInstructionsScene(float t)
     {
@@ -56,6 +60,7 @@ public class FS_Timeline : MonoBehaviour
         t = ScriptPlaySegment(t, 8, "morning/outside-converted", "narration/6");
         t = ScriptPlaySegment(t, 13, "morning/front-desk-converted", "narration/short7");
         t = ScriptPlaySegment(t, 10, "morning/bathroom-converted", "narration/8alternate");
+        ScriptPlayAudioClip(t, "other_audio/background-talking", 10, 0.9f);
         t = ScriptPlaySegment(t, 10, "morning/big-room-long-converted", "narration/9");
 
         return t;
@@ -64,9 +69,10 @@ public class FS_Timeline : MonoBehaviour
     void SetupParkScene(float t)
     {
         t = ScriptPlaySegment(t, 8, "park/on-bed-converted", "narration/short11");
+        ScriptPlayAudioClip(t, "other_audio/birds", 45, 0.5f);
         t = ScriptPlaySegment(t, 9, "park/park1-converted", "narration/short12");
         t = ScriptPlaySegment(t, 21, "park/park2-converted", "narration/13");
-        t = ScriptPlaySegment(t, 15, "park/park_choice-injected-converted", "narration/21alternate");
+        t = ScriptPlaySegment(t, 16, "park/park_choice-injected-converted", "narration/21alternate-with-text");
         ScriptShowChoiceScene(t);
 
         // No return -- give the user time to make a choice
@@ -74,14 +80,16 @@ public class FS_Timeline : MonoBehaviour
 
     float SetupChoseShelterScene(float t)
     {
-        t = ScriptPlaySegment(t, 16, "morning/hallway", "narration/23alternate");
+        ScriptPlayAudioClip(t, "other_audio/text-sent", 1, 0.5f);
+        t = ScriptPlaySegment(t + 1, 16, "morning/hallway", "narration/23alternate");
 
         return t;
     }
 
     float SetupChoseWorkScene(float t)
     {
-        t = ScriptPlaySegment(t, 14, "park/chose-work-converted", "narration/22alternate");
+        ScriptPlayAudioClip(t, "other_audio/text-sent", 1, 0.5f);
+        t = ScriptPlaySegment(t + 1, 14, "park/chose-work-converted", "narration/22alternate");
 
         return t;
     }
@@ -94,14 +102,13 @@ public class FS_Timeline : MonoBehaviour
         t = ScriptPlaySegment(t, 6, "evening/laundry-converted", "narration/short17-18");
         ScriptPlayAudioClip(t + 7, "music/end_piano_music", 28);
         t = ScriptPlaySegment(t, 12, "evening/shower-converted", "narration/19");
-        t = ScriptPlaySegment(t, 24, "evening/success-converted", "narration/25");
+        t = ScriptPlaySegment(t, 24, "evening/success-converted", "narration/25new");
 
         return t;
     }
 
     void SetupFinalScene(float t)
     {
-        // TODO: Still working on the instructions part of this! (currently has no effect)
         t = ScriptShowMuseumInstructions(t);
 
         ScriptShowMuseumScene(t);
@@ -122,7 +129,7 @@ public class FS_Timeline : MonoBehaviour
     private List<Event> timeline;
     private bool timelinePlaying;
 
-    private float ScriptPlaySegment(float startTime, float duration, string videoName, string audioName, float audioVolume = 1.0f, float fadeDuration = 0.5f)
+    private float ScriptPlaySegment(float startTime, float duration, string videoName, string audioName, float videoVolume = 0.0f, float audioVolume = 1.0f, float fadeDuration = 0.5f)
     {
         timeline.Add(new FadeEvent()
         {
@@ -134,7 +141,8 @@ public class FS_Timeline : MonoBehaviour
         {
             time = startTime,
             videoName = videoName,
-            videoPlayer = videoPlayer
+            videoPlayer = videoPlayer,
+            videoVolume = videoVolume
         });
         timeline.Add(new FadeEvent()
         {
@@ -178,8 +186,9 @@ public class FS_Timeline : MonoBehaviour
         timeline.Add(new VideoEvent()
         {
             time = startTime,
-            videoName = "instructions/atrium",
-            videoPlayer = videoPlayer
+            videoName = "instructions/stairs",
+            videoPlayer = videoPlayer,
+            videoVolume = 0.0f
         });
         timeline.Add(new LoadObjectEvent()
         {
@@ -305,32 +314,73 @@ public class FS_Timeline : MonoBehaviour
 
     private float ScriptShowMuseumInstructions(float startTime)
     {
-        // TODO: Still working on this one!
-
-        return startTime;
-    }
-
-    private void ScriptShowMuseumScene(float startTime)
-    {
         timeline.Add(new FadeEvent()
         {
             time = startTime,
             fadeDuration = 0.5f,
             fadeIn = false
         });
-        timeline.Add(new FadeEvent()
-        {
-            // + BUFFER to let the video load and start playing! It's hacky but it works. We are willing to take the low road here on team 6.
-            time = startTime + 0.5f + BUFFER,
-            fadeDuration = 0.5f,
-            fadeIn = true
-        });
         timeline.Add(new LoadObjectEvent()
         {
-            time = startTime + 0.5f,
+            time = startTime + 0.8f,
             obj = museumSceneContainer,
             load = true
         });
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime + 0.8f,
+            obj = museumInstructionTexts[0].gameObject,
+            load = true
+        });
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime + 0.8f,
+            obj = museumInstructionTexts[1].gameObject,
+            load = true
+        });
+        timeline.Add(new FadeEvent()
+        {
+            // + BUFFER to let the video load and start playing! It's hacky but it works. We are willing to take the low road here on team 6.
+            time = startTime + 0.8f + BUFFER,
+            fadeDuration = 0.5f,
+            fadeIn = true
+        });
+        timeline.Add(new AnimateTextEvent()
+        {
+            time = startTime + 1.0f + BUFFER,
+            text = museumInstructionTexts[0],
+            animateDuration = 2.5f,
+            animateIn = true
+        });
+        timeline.Add(new AnimateTextEvent()
+        {
+            time = startTime + 1.0f + BUFFER + 4.5f,
+            text = museumInstructionTexts[1],
+            animateDuration = 2.5f,
+            animateIn = true
+        });
+
+        return startTime + 1.0f + BUFFER + 7.0f;
+    }
+
+    private void ScriptShowMuseumScene(float startTime)
+    {
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime + 0.5f,
+            obj = menu,
+            load = true
+        });
+        for (int i = 0; i < museumExhibits.Length; i++)
+        {
+            timeline.Add(new MuseumExhibitEvent()
+            {
+                time = startTime + 0.1f + (i * 0.2f),
+                exhibit = museumExhibits[i],
+                animateDuration = 0.7f,
+                animateIn = true
+            });
+        }
     }
 
     void ScriptUnloadAllObjects(float startTime)
@@ -371,6 +421,18 @@ public class FS_Timeline : MonoBehaviour
         timeline.Add(new LoadObjectEvent()
         {
             time = startTime,
+            obj = museumInstructionTexts[0].gameObject,
+            load = false
+        });
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime,
+            obj = museumInstructionTexts[1].gameObject,
+            load = false
+        });
+        timeline.Add(new LoadObjectEvent()
+        {
+            time = startTime + 0.02f,
             obj = museumSceneContainer,
             load = false
         });
@@ -428,13 +490,14 @@ public class FS_Timeline : MonoBehaviour
     {
         public string videoName;
         public VideoPlayer videoPlayer;
+        public float videoVolume;
 
         public override void Start()
         {
             VideoClip video = Resources.Load<VideoClip>(videoName) as VideoClip;
             videoPlayer.clip = video;
             videoPlayer.frame = 0;
-            // videoPlayer.SetDirectAudioVolume(0, 0.0f);
+            videoPlayer.SetDirectAudioVolume(0, videoVolume);
             videoPlayer.Play();
         }
     }
@@ -482,6 +545,25 @@ public class FS_Timeline : MonoBehaviour
         }
     }
 
+    class MuseumExhibitEvent : Event
+    {
+        public MuseumExhibit exhibit;
+        public float animateDuration;
+        public bool animateIn;
+
+        public override void Start()
+        {
+            if (animateIn)
+            {
+                exhibit.Enter(animateDuration);
+            }
+            else
+            {
+                exhibit.Exit(animateDuration);
+            }
+        }
+    }
+
     class LoadObjectEvent : Event
     {
         // The object to be loaded or unloaded.
@@ -507,6 +589,9 @@ public class FS_Timeline : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         UnityEngine.XR.InputTracking.disablePositionalTracking = true;
+        ResetCamera();
+
+        menu.SetActive(false);
 
         // Initialize all scenes, using a helper function to start from the first scene
         // and initialize events for all scenes until the choice
@@ -529,5 +614,35 @@ public class FS_Timeline : MonoBehaviour
                 i--;
             }
         }
+
+        CheckKeypress();
+    }
+
+    void CheckKeypress()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            menu.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            menu.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ResetCamera();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SetupSceneAndOnward("instructions");
+        }
+    }
+
+    void ResetCamera()
+    {
+        OpenVR.System.ResetSeatedZeroPose();
+        OpenVR.Compositor.SetTrackingSpace(ETrackingUniverseOrigin.TrackingUniverseSeated);
+        Vector3 cameraPosition = new Vector3(player.transform.position.x, player.transform.position.y + 2.1f, player.transform.position.z);
+        camera.transform.SetPositionAndRotation(cameraPosition, player.transform.rotation);
     }
 }
