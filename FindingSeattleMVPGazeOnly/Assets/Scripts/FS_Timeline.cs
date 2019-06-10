@@ -45,7 +45,7 @@ public class FS_Timeline : MonoBehaviour
 
     float SetupEvictionScene(float t)
     {
-        t = ScriptPlaySegment(t, 21, "eviction/outside-apartment-converted", "other_audio/bank-knocking-shortened");
+        t = ScriptPlaySegment(t, 21, "eviction/outside-apartment-converted", "other_audio/bank-knocking-shortened", videoVolume: 1.0f);
         t = ScriptPlaySegment(t, 11, "eviction/hall-short-converted", "narration/short1");
         t = ScriptPlaySegment(t, 6, "eviction/zillow-scroll-converted", "narration/short3");
         t = ScriptPlaySegment(t, 12, "eviction/scroll-shelter-converted", "narration/4");
@@ -497,7 +497,17 @@ public class FS_Timeline : MonoBehaviour
             VideoClip video = Resources.Load<VideoClip>(videoName) as VideoClip;
             videoPlayer.clip = video;
             videoPlayer.frame = 0;
-            videoPlayer.SetDirectAudioVolume(0, videoVolume);
+
+            if (videoVolume == 0.0f)
+            {
+                videoPlayer.audioOutputMode = VideoAudioOutputMode.None;
+            }
+            else
+            {
+                videoPlayer.SetDirectAudioVolume(0, videoVolume);
+                videoPlayer.audioOutputMode = VideoAudioOutputMode.Direct;
+            }
+
             videoPlayer.Play();
         }
     }
