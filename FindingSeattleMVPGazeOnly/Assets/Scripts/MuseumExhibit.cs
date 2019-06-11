@@ -14,6 +14,11 @@ public class MuseumExhibit : MonoBehaviour
         state = State.START;
 
         finalPosition = transform.position;
+        Reset();
+    }
+
+    public void Reset()
+    {
         Vector3 startPosition = finalPosition;
         startPosition.y += 20.0f;
         transform.position = startPosition;

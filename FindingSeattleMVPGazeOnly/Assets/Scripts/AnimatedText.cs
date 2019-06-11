@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AnimatedText : MonoBehaviour
 {
+    public bool enableOpacity = true;
+    public bool reverseDirection = false;
+
     private enum State { START, ENTERED, EXITED };
     private State state;
 
@@ -13,14 +16,26 @@ public class AnimatedText : MonoBehaviour
     private void Start()
     {
         state = State.START;
-
         finalPosition = transform.position;
-        Vector3 startPosition = finalPosition;
-        startPosition.y -= 10.0f;
-        transform.position = startPosition;
+        Renderer renderer = GetComponent<Renderer>();
+        if (enableOpacity) {
+            finalColor = renderer.material.color;
+        }
 
-        finalColor = GetComponent<Renderer>().material.color;
-        GetComponent<Renderer>().material.color = Color.clear;
+        Reset();
+    }
+
+    public void Reset()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        if (enableOpacity)
+        {
+            renderer.material.color = Color.clear;
+        }
+
+        Vector3 startPosition = finalPosition;
+        startPosition.y += reverseDirection ? 10.0f : -10.0f;
+        transform.position = startPosition;
     }
 
     public void Enter(float duration)
@@ -44,7 +59,7 @@ public class AnimatedText : MonoBehaviour
     IEnumerator RiseFadeEntrance(Vector3 finalPosition, Color finalColor, float duration)
     {
         Vector3 startPosition = finalPosition;
-        startPosition.y -= 10.0f;
+        startPosition.y += reverseDirection ? 10.0f : -10.0f;
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration)
         {
             Color newColor = new Color(finalColor.r, finalColor.g, finalColor.b, Mathf.Lerp(0.0f, 1.0f, Easing.EaseOutQuart(0.0f, 1.0f, t)));
@@ -58,7 +73,7 @@ public class AnimatedText : MonoBehaviour
     IEnumerator RiseFadeExit(Vector3 startPosition, Color startColor, float duration)
     {
         Vector3 finalPosition = startPosition;
-        finalPosition.y += 6.0f;
+        finalPosition.y += reverseDirection ? -6.0f : 6.0f;
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration)
         {
             Color newColor = new Color(finalColor.r, finalColor.g, finalColor.b, Mathf.Lerp(1.0f, 0.0f, Easing.EaseInQuart(0.0f, 1.0f, t)));
